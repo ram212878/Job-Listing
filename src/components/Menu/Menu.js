@@ -6,7 +6,7 @@ const Menu = () => {
     <div id="menu" className='text-white space-x-2' >
       <ul className='flex items-center '>
         <li >
-          <Link to='/' className='px-2 py-2 hover:bg-orange-500 ' >Home </Link>
+          <Link to='/' className='px-2 py-2 hover:bg-orange-500' >Home </Link>
         </li>
 
         <li >

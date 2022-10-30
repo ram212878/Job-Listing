@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import PostService from '../services/PostService';
+import { useNavigate } from 'react-router-dom';
+import PostApiService from '../services/PostService';
+// import { Navigate} from 'react-router-dom';
 
 const AddPost = () => {
-
+  let navigate = useNavigate();
+  
   const [post, setPost] = useState({
     profile: "",
     desc: "",
@@ -22,8 +25,9 @@ const AddPost = () => {
 
   const save = (e)=>{
     e.preventDefault();
-    PostService.savePost(post).then((response)=>{
+    PostApiService.savePost(post).then((response)=>{
       console.log(response);
+      navigate("/",{ replace: true });
     }).catch((err)=>{
       console.log(err);
     })
